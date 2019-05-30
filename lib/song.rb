@@ -55,4 +55,15 @@ class Song
     song.artist_name = art_name
     return song
   end
+  
+  def self.create_from_file(file_name)
+    working = []
+    working = file_name.chomp(".mp3").split(" - ")
+    art_name = working[0]
+    song_name = working[1]
+    song = self.new
+    song.name = song_name
+    song.artist_name = art_name
+    self.all << song
+  end
 end
