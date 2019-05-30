@@ -47,7 +47,7 @@ class Song
   
   def self.new_from_filename(file_name)
     working = []
-    working = file_name.delete(".mp3").split(" - ")
+    working = file_name.delete(/z\/).split(" - ")
     art_name = working[0]
     song_name = working[1]
     song = self.new
