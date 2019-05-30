@@ -18,13 +18,15 @@ class Song
   
   def self.new_by_name(song_name)
     song = self.new
-    song.name = (song_name)
+    song.name = song_name
     return song
   end
   
   def self.create_by_name(song_name)
     song = self.new
-    song.name = 
+    song.name = song_name
+    self.all << song
+    return song
   
   def self.find_by_name(song_name)
     self.all.find{|song| song.name == song_name}
